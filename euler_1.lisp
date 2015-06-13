@@ -9,7 +9,7 @@
     (mapc (lambda (x)
             (when (or (divisible-nump x 3) (divisible-nump x 5))
               (incf sum x)))
-          (loop for i from 1 to (1- max) collect i))
+          (loop for i below max collect i))
     sum))
 
 ;; faster version
