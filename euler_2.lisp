@@ -1,0 +1,13 @@
+(defun sum-even-fibonacci-numbers (max)
+  (let ((sum 0))
+    (labels ((cal-fib-num (smaller bigger)
+               (when (<= bigger max)
+                 (setf even-fib (+ smaller bigger))
+                 (setf next-fib (+ even-fib bigger))
+                 (setf 2nd-next-fib (+ even-fib next-fib))
+                 (incf sum even-fib)
+                 (cal-fib-num next-fib 2nd-next-fib))))
+      (cal-fib-num 1 1))
+    sum))
+
+;; (sum-even-fibonacci-numbers 4000000)
